@@ -4,7 +4,8 @@ def hypothesis_body():
     st.write("### Hypothesis and Validation")
 
     st.info(
-        f"**Hypothesis:** Powdery mildew appears as a white, dusty coating on leaves, making them visually distinct from healthy leaves."
+        f"**Hypothesis:** Powdery mildew appears as a white, dusty coating on "
+        f"leaves, making them visually distinct from healthy leaves."
     )
 
     st.success(

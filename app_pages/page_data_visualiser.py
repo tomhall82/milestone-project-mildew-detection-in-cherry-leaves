@@ -93,13 +93,13 @@ def data_visualiser_body():
         diff_between_avgs = plt.imread(f"outputs/{version}/avg_diff.png")
 
         st.warning(
-            f"* This study shows "
-            f"Patterns for differentiation between the two types of leaves."
-            f"Visible difference around the edges of the leaves, making the "
-            f"distinction clearer."
-            f"Less variation in color in the middle of both types of leaves."
-            f"Darker middle sections show minimal color variation, making it "
-            f"harder to differentiate the leaves based on this area."
+            f"This study demonstrates clear patterns that differentiate between "
+            f"the two types of leaves. A visible distinction is observed around "
+            f"the edges of the leaves, which helps in making the differentiation "
+            f"more apparent. However, there is less color variation in the middle "
+            f"sections of both types of leaves, particularly in the darker middle "
+            f"areas. This reduced variation in color makes it challenging to "
+            f"distinguish between the leaves based on the central portions."
             )
         st.image(diff_between_avgs, caption='Difference between average images')
 
