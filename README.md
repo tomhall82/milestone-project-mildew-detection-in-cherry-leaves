@@ -1,42 +1,12 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Mildew Detection in Cherry Leaves
 
-## Template Instructions
+This project applies data science and machine learning to distinguish between healthy and diseased cherry leaves. Users can upload images through a Streamlit dashboard to predict leaf health. Alongside the model, the project includes insights from traditional data analysis, hypothesis evaluation, and model performance assessment.
 
-Welcome,
+To keep things organized and efficient, the project is structured around three Jupyter notebooks: one for data import and cleaning, one for data visualization, and another for developing and evaluating a TensorFlow deep learning model. This setup ensures a smooth workflow from data processing to model deployment.
 
-This is the Code Institute student template for the Cherry Leaves project option in Predictive Analytics. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
+The goal is to help an agri-food business tackle a powdery mildew infestation in its cherry tree plantations. Right now, trees are inspected manually—a slow and labor-intensive process. By automating detection through machine learning, this solution can save time and improve accuracy, making it easier to identify and treat infected trees quickly.
 
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
-
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-1. In your newly created repo click on the green Code button. 
-
-1. Then, from the Codespaces tab, click Create codespace on main.
-
-1. Wait for the workspace to open. This can take a few minutes.
-
-1. Open a new terminal and `pip3 install -r requirements.txt`
-
-1. Open the jupyter_notebooks directory, and click on the notebook you want to open.
-
-1. Click the kernel button and choose Python Environments.
-
-Note that the kernel says Python 3.12.1 as it inherits from the workspace, so it will be Python-3.12.1 as installed by Codespaces. To confirm this, you can use `! python --version` in a notebook code cell.
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, then you can create a new one with _Regenerate API Key_.
+The project is hosted on the streamlit app and a live version may be found [here](https://milestone-project-mildew-detection-in-0b9a.onrender.com)
 
 ## Dataset Content
 
@@ -52,13 +22,41 @@ To save time in this process, the IT team suggested an ML system that detects in
 - 1 - The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.
 - 2 - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
 
-## Hypothesis and how to validate?
+## Hypothesis and Validation Approach
 
-- List here your project hypothesis(es) and how you envision validating it (them).
+### Hypothesis
+
+Infected cherry leaves can be visually identified due to a distinct powdery white layer on their surface.
+
+### Validation Steps
+
+1. **Data Collection**  
+   - Gather an image dataset of healthy and infected leaves from the client.  
+
+1. **Visual Inspection**  
+   - Create an image montage to compare healthy and infected leaves, highlighting key differences.  
+
+1. **Testing with Image Analysis**  
+   - Perform an average image analysis to identify consistent patterns or visual features that distinguish infected leaves from healthy ones.
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
-- List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+## Mapping Business Requirements to Data Visualizations and ML Tasks  
+
+### Business Requirement 1
+
+The study should include analysis on:  
+
+- **Average and variability images** for each class (healthy or powdery mildew).  
+- **Differences between average healthy and average powdery mildew cherry leaves** to highlight distinguishing features.  
+- **An image montage** for each class to provide a visual reference.  
+
+### Business Requirement 2
+
+- The ML system should **predict whether a cherry leaf is healthy or infected with powdery mildew**.  
+- The dashboard should include:  
+  - **An image montage feature** for visual comparison.  
+  - **A prediction feature** that allows users to upload an image and receive a classification result.  
 
 ## ML Business Case
 
@@ -75,18 +73,18 @@ To save time in this process, the IT team suggested an ML system that detects in
 
 ## Deployment
 
-### Heroku
-
-- The App live link is: `https://YOUR_APP_NAME.herokuapp.com/`
-- Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-- The project was deployed to Heroku using the following steps.
-
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
-6. If the slug size is too large, then add large files not required for the app to the .slugignore file.
+1. Log in to Render.com using Github.
+1. Click on the New button, select Web Service.
+1. At Source Code, select Git Providor. Select your repository name. Click Connect.
+1. Enter a unique name for your web service.
+1. Select the Python3 language.
+1. Select the main branch.
+1. Select the Frankfurt (EU Central) Region.
+1. Set the Build Command: `pip install -r requirements.txt && ./setup.sh`
+1. Set the Start Command: `streamlit run app.py`
+1. Set Instance Type: Free
+1. Set the Environment Variables: `Key: PORT` `Value: 8501` and `Key: PYTHON_VERSION` `Value: 3.12.1`
+1. Click Deploy Web Service
 
 ## Main Data Analysis and Machine Learning Libraries
 
