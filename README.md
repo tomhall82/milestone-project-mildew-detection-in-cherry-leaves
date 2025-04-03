@@ -41,8 +41,6 @@ Infected cherry leaves can be visually identified due to a distinct powdery whit
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
-## Mapping Business Requirements to Data Visualizations and ML Tasks  
-
 ### Business Requirement 1
 
 The study should include analysis on:  
@@ -100,7 +98,7 @@ None
 ### Other technologies used
 
 - [Streamlit](https://streamlit.io/) - Library for building interactive multi-page dashboard
-- [Heroku](https://www.heroku.com/) - Deployment of the dashboard as a web application
+- [Render](https://render.com/) - Deployment of the dashboard as a web application
 - [Git/GitHub](https://github.com/) - Version control and storing the source code
 - [VSCode](https://code.visualstudio.com/) - IDE for local development
 
