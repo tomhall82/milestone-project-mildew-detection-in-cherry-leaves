@@ -69,7 +69,7 @@ The study should include analysis on:
 
 ## Unfixed Bugs
 
-- You will need to mention unfixed bugs and why they were unfixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable for consideration, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+None
 
 ## Deployment
 
@@ -88,7 +88,21 @@ The study should include analysis on:
 
 ## Main Data Analysis and Machine Learning Libraries
 
-- Here, you should list the libraries used in the project and provide an example(s) of how you used these libraries.
+- [NumPy](https://numpy.org/) - Used to convert information to arrays
+- [Pandas](https://pandas.pydata.org/) - Used to convert numerical data into dataframes
+- [Matplotlib](https://matplotlib.org/) - Used to plot images such as augmented images and data images
+- [Seaborn](https://seaborn.pydata.org/) - Used to plot image datasets, especially with multiple axes and more features
+- [Plotly](https://plotly.com/python/) - Used for plotting results of ML model training
+- [Joblib](https://joblib.readthedocs.io/) - Used for runnning tasks in parallel
+- [TensorFlow](https://www.tensorflow.org/) - Machine learning library used to build the model
+- [Keras Tuner](https://keras.io/) - Tuning of hyperparameters to find the best combination for model accuracy
+
+### Other technologies used
+
+- [Streamlit](https://streamlit.io/) - Library for building interactive multi-page dashboard
+- [Heroku](https://www.heroku.com/) - Deployment of the dashboard as a web application
+- [Git/GitHub](https://github.com/) - Version control and storing the source code
+- [VSCode](https://code.visualstudio.com/) - IDE for local development
 
 ## Credits
 
