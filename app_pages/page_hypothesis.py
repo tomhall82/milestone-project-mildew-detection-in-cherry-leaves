@@ -1,6 +1,6 @@
 import streamlit as st
 
-def hypothesis_page():
+def hypothesis_body():
     st.write("### Hypothesis and Validation")
 
     st.info(

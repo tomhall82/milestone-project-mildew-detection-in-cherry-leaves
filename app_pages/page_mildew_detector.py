@@ -15,7 +15,7 @@ from src.machine_learning.predictive_analysis import (
 )
 
 
-def detection_page():
+def detection_body():
 
     st.write("### Mildew Detection")
 
