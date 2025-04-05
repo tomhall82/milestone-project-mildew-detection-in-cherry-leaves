@@ -5,13 +5,13 @@ import plotly.express as px
 from keras._tf_keras.keras.models import load_model
 from PIL import Image
 from src.data_management import load_pkl_file
+import uuid  # Import the uuid module to generate unique keys
 
 
 def plot_predictions_probabilities(pred_proba, pred_class):
     """
     Plot prediction probability results
     """
-
     prob_per_class = pd.DataFrame(
         data=[0, 0],
         index={'Infected': 0, 'Healthy': 1}.keys(),
@@ -30,7 +30,12 @@ def plot_predictions_probabilities(pred_proba, pred_class):
         y=prob_per_class['Probability'],
         range_y=[0, 1],
         width=600, height=300, template='seaborn')
-    st.plotly_chart(fig)
+    
+    # Generate a unique key using UUID
+    unique_key = str(uuid.uuid4())  # This generates a unique identifier
+    
+    # Pass the unique key to the plotly chart to ensure no duplicates
+    st.plotly_chart(fig, key=unique_key)
 
 
 def resize_input_image(img, version):
@@ -53,7 +58,7 @@ def load_model_and_predict(my_image, version):
 
     pred_proba = model.predict(my_image)[0, 0]
 
-    target_map = {v: k for k, v in {'Infected': 0, 'Healthy': 1}.items()}
+    target_map = {v: k for k, v in {'Healthy': 0, 'Infected': 1}.items()}
     pred_class = target_map[pred_proba > 0.5]
     if pred_class == target_map[0]:
         pred_proba = 1 - pred_proba
