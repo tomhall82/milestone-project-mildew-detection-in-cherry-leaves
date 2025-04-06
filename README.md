@@ -1,12 +1,46 @@
 # Mildew Detection in Cherry Leaves
 
+![Am I responsive](assets/am_i_responsive_mildew.png)
+
 This project applies data science and machine learning to distinguish between healthy and diseased cherry leaves. Users can upload images through a Streamlit dashboard to predict leaf health. Alongside the model, the project includes insights from traditional data analysis, hypothesis evaluation, and model performance assessment.
 
 To keep things organized and efficient, the project is structured around three Jupyter notebooks: one for data import and cleaning, one for data visualization, and another for developing and evaluating a TensorFlow deep learning model. This setup ensures a smooth workflow from data processing to model deployment.
 
 The goal is to help an agri-food business tackle a powdery mildew infestation in its cherry tree plantations. Right now, trees are inspected manually—a slow and labor-intensive process. By automating detection through machine learning, this solution can save time and improve accuracy, making it easier to identify and treat infected trees quickly.
 
-The project is hosted on the streamlit app and a live version may be found [here](https://milestone-project-mildew-detection-in-0b9a.onrender.com)
+The project is hosted on the streamlit app and a live version may be found [here](https://milestone-project-mildew-detection-in-0b9a.onrender.com/)
+
+## Table of Contents
+
+- [Mildew Detection in Cherry Leaves](#mildew-detection-in-cherry-leaves)
+  - [Table of Contents](#table-of-contents)
+  - [Dataset Content](#dataset-content)
+  - [Business Requirements](#business-requirements)
+  - [Hypothesis and Validation Approach](#hypothesis-and-validation-approach)
+    - [Hypothesis 1](#hypothesis-1)
+    - [Validation](#validation)
+    - [Hypothesis 2](#hypothesis-2)
+    - [Validation](#validation-1)
+  - [The rationale to map the business requirements to the Data Visualisations and ML tasks](#the-rationale-to-map-the-business-requirements-to-the-data-visualisations-and-ml-tasks)
+    - [Business Requirement 1](#business-requirement-1)
+    - [Business Requirement 2](#business-requirement-2)
+  - [ML Business Case](#ml-business-case)
+  - [Dashboard Design](#dashboard-design)
+    - [Quick Project Summary](#quick-project-summary)
+    - [Cells Visualiser](#cells-visualiser)
+    - [Mildew Detection](#mildew-detection)
+    - [Project Hypothesis](#project-hypothesis)
+    - [ML Performance Metrics](#ml-performance-metrics)
+  - [Unfixed Bugs](#unfixed-bugs)
+  - [Testing](#testing)
+    - [Manual Testing](#manual-testing)
+    - [Python Validation](#python-validation)
+  - [Deployment](#deployment)
+  - [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
+    - [Other technologies used](#other-technologies-used)
+  - [Credits](#credits)
+    - [Code](#code)
+  - [Acknowledgements](#acknowledgements)
 
 ## Dataset Content
 
@@ -24,11 +58,11 @@ To save time in this process, the IT team suggested an ML system that detects in
 
 ## Hypothesis and Validation Approach
 
-### Hypothesis
+### Hypothesis 1
 
 Infected cherry leaves can be visually identified due to a distinct powdery white layer on their surface.
 
-### Validation Steps
+### Validation
 
 1. **Data Collection**  
    - Gather an image dataset of healthy and infected leaves from the client.  
@@ -38,6 +72,14 @@ Infected cherry leaves can be visually identified due to a distinct powdery whit
 
 1. **Testing with Image Analysis**  
    - Perform an average image analysis to identify consistent patterns or visual features that distinguish infected leaves from healthy ones.
+
+### Hypothesis 2
+
+An ML system trained on cherry leaf images can accurately predict that a cherry leaf is healthy or infected with mildew with at least 90% accuracy.
+
+### Validation
+
+This has been verified through the ML Prediction Metrics which show 99% accuracy.
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
@@ -58,16 +100,60 @@ The study should include analysis on:
 
 ## ML Business Case
 
-- In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+The client has requested a solution that will enable them to quickly and efficiently differentiate between healthy & diseased leaves. This will be done by creating a ML model.
+
+The aim behind the ML task is to develop a ML model that is able to distinguish between a healthy cherry leaf and one infected with powdery mildew.
+
+To do this, we will create an ML model which can predict if a leaf is infected or not. This will then indicate if the tree in question should be recommended for treatment.
+
+We may consider this successful if it is capable of achieving an accuracy rating of at least 97% on the test dataset. lower than 97% will be considered a failure. A high accuracy rating is essential to avoid serious economic implications for the client.
+
+The  ML model should be consistantly reliable while the available montages and comparisons offer visual reference for users.
+
+Successful creation and application will improve the accuracy and speed of detecting powdery mildew, leading to reduced reliance on manual labor, cost savings, enhanced productivity, and increased worker safety by minimizing exposure to potential environmental hazards.
 
 ## Dashboard Design
 
-- List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items, that your dashboard library supports.
-- Finally, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project, you were confident you would use a given plot to display an insight, but later, you chose another plot type).
+### Quick Project Summary
+
+### Cells Visualiser
+
+### Mildew Detection
+
+### Project Hypothesis
+
+### ML Performance Metrics
 
 ## Unfixed Bugs
 
 None
+
+## Testing
+
+### Manual Testing
+
+| Dashboard item | Test conducted | Expected result | Actual result |
+| -- | -- | -- | -- |
+| Navbar | Selecting button for Quick Project Summary | Quick Project Summary page opens | Success |
+| Navbar | Selecting button for Cells Visualiser | Cells Visualiser page opens | Success |
+| Button for difference between average & variability image | Click button | Display average & variability image for healthy & infected leaves | Success |
+| Button for difference between average healthy & infect leaves | Click button | Display both average images & difference image for average healthy & infect leaves | Success |
+| Button for image montage | Click button | Display dropdown for montage creation | Success |
+| Dropdown option for healthy leaves | Select & click button to create montage | See montage of healthy leaves| Success |
+| Dropdown option for infected leaves | Select & click button to create montage | See montage of infected leaves| Success |
+| Navbar | Selecting button for Mildew Detector |Mildew Detector page opens | Success |
+| Link to Kaggle on Mildew Detector page | Click on link |Kaggle page for dataset opens | Success |
+| Box for uploading data | Drag & drop leaf image into box | See report displaying analysis of the image | Success |
+| Box for uploading data | Use browse files button | File explorer opens to enable selection | Success |
+| Box for uploading data | Upload image from file explorer | See report displaying analysis of the image | Success |
+| Box for uploading data | Repeat prior two items for multiple images | See report displaying analysis of all the images| Success |
+| Image analysis report | Click button to download csv report of analysis | Report is downloaded containing the results shown on dashboard| Success |
+| Navbar | Selecting button for Project Hypotheses | Project Hypothesis page opens | Success |
+| Navbar | Selecting button for ML Performance Metrics | ML Performance Metrics page opens | Success |
+
+### Python Validation
+
+The python code for the app pages and files for data management and predictive analysis was validated using a [PEP8 linter](https://pep8ci.herokuapp.com/).
 
 ## Deployment
 
@@ -104,20 +190,13 @@ None
 
 ## Credits
 
-- In this section, you need to reference where you got your content, media and from where you got extra help. It is common practice to use code from other repositories and tutorials. However, it is necessary to be very specific about these sources to avoid plagiarism.
-- You can break the credits section up into Content and Media, depending on what you have included in your project.
+### Code
 
-### Content
+- The Code Institute Malaria Walkthrough Project has been used as a guide throughout this code.
+- [Wikipedia](https://en.wikipedia.org/wiki/Powdery_mildew) was used for further information on powdery mildew.
+- The dataset was provided by Code institute through [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves).
 
-- The text for the Home page was taken from Wikipedia Article A.
-- Instructions on how to implement form validation on the Sign-Up page were taken from [Specific YouTube Tutorial](https://www.youtube.com/).
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/).
-
-### Media
-
-- The photos used on the home and sign-up page are from This Open-Source site.
-- The images used for the gallery page were taken from this other open-source site.
-
-## Acknowledgements (optional)
+## Acknowledgements
 
 - Thank the people who provided support throughout this project.
+- Thanks to my code institute mentor Mo Shami
