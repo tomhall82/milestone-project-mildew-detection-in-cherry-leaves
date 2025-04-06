@@ -51,7 +51,7 @@ def resize_input_image(img, version):
 
 def load_model_and_predict(my_image, version):
     """
-    Load and perform ML prediction over live images
+    Load and perform ML prediction over uploaded images
     """
 
     model = load_model(f"outputs/{version}/mildew_detector_model.h5")
