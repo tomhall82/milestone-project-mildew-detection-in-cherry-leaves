@@ -10,6 +10,9 @@ from src.machine_learning.evaluate_clf import load_test_evaluation
 
 
 def ml_performance_metrics():
+    """
+    Displays the machine learning model's performance metrics.
+    """
     version = 'v1'
 
     st.write("### Train, Validation and Test Set: Labels Frequencies")

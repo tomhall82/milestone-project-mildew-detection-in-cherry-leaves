@@ -2,6 +2,9 @@ import streamlit as st
 
 
 def summary_body():
+    """
+    Displays a brief summary of the project.
+    """
 
     st.write("### Brief Project Summary")
 

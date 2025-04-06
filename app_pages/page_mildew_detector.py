@@ -16,6 +16,9 @@ from src.machine_learning.predictive_analysis import (
 
 
 def detection_body():
+    """
+    Allows users to upload cherry leaf images for analysis.
+    """
 
     st.write("### Mildew Detection")
 

@@ -16,6 +16,9 @@ import random
 
 
 def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15, 10)):
+    """
+    Displays a montage of images.
+    """
     sns.set_style("white")
     labels = os.listdir(dir_path)
 
@@ -60,6 +63,9 @@ def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15, 10)):
 
 
 def data_visualiser_body():
+    """
+    Displays data visualizations related to cherry leaf health.
+    """
     st.write("### Data Visualiser")
     st.info(
         f"* The client is interested in conducting a study to visually "

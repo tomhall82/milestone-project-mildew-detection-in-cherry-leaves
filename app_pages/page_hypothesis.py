@@ -2,6 +2,9 @@ import streamlit as st
 
 
 def hypothesis_body():
+    """
+    Displays hypotheses and validations.
+    """
     st.write("### Hypothesis and Validation")
 
     st.info(
