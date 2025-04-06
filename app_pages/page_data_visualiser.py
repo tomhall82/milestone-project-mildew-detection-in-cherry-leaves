@@ -1,5 +1,5 @@
 """
-Orignal code is from Code Institute walkthrough project, re-purposed
+Original code is from Code Institute walkthrough project, re-purposed
 for this project
 """
 
@@ -76,35 +76,41 @@ def data_visualiser_body():
         st.warning(
             f"Average Image shows that powdery-mildew affected leaves appear "
             f"lighter in color. The variability image highlights a purple hue "
-            f"around the edges of healthy leaves, while the affected leaves show "
-            f"a darker edge. The healthy leaves also display more color variation "
-            f"in the middle, whereas the affected leaves have a more uniform "
-            f"appearance. Overall, the lighter color of the affected leaves "
-            f"makes the difference subtle and not very noticeable."
+            f"around the edges of healthy leaves, while the affected leaves "
+            f"show a darker edge. The healthy leaves also display more color "
+            f"variation in the middle, whereas the affected leaves have a "
+            f"more uniform appearance. Overall, the lighter color of the "
+            f"affected leaves makes the difference subtle and not very "
+            f"noticeable."
         )
-        
+
         st.image(avg_mildew,
-                 caption='Leaf Infected with Powdery Mildew- Average and Variability')
+                 caption='Leaf Infected with Powdery Mildew- Average and '
+                 'Variability')
         st.image(avg_healthy,
                  caption='Healthy Leaf- Average and Variability')
         st.write("---")
 
-    if st.checkbox("Differences between average powdery mildew and average healthy leaves"):
+    if st.checkbox("Differences between average powdery mildew and average "
+                   "healthy leaves"):
         diff_between_avgs = plt.imread(f"outputs/{version}/avg_diff.png")
 
         st.warning(
-            f"This study demonstrates clear patterns that differentiate between "
-            f"the two types of leaves. A visible distinction is observed around "
-            f"the edges of the leaves, which helps in making the differentiation "
-            f"more apparent. However, there is less color variation in the middle "
-            f"sections of both types of leaves, particularly in the darker middle "
-            f"areas. This reduced variation in color makes it challenging to "
-            f"distinguish between the leaves based on the central portions."
+            f"This study demonstrates clear patterns that differentiate "
+            f"between the two types of leaves. A visible distinction is "
+            f"observed around the edges of the leaves, which helps in making "
+            f"the differentiation more apparent. However, there is less color "
+            f"variation in the middle sections of both types of leaves, "
+            f"particularly in the darker middle areas. This reduced variation "
+            f"in color makes it challenging to distinguish between the leaves "
+            f"based on the central portions."
             )
-        st.image(diff_between_avgs, caption='Difference between average images')
+        st.image(diff_between_avgs, caption='Difference between average \
+                 images')
 
     if st.checkbox("Image Montage"):
-        st.write("* To refresh the montage, click on the 'Create Montage' button")
+        st.write("* To refresh the montage, click on the 'Create Montage' "
+                 "button")
         data_dir = 'inputs/cherry_leaves_dataset/cherry-leaves'
         labels = os.listdir(data_dir + '/validation')
         label_to_display = st.selectbox(

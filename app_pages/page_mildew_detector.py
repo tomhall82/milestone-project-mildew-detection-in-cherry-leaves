@@ -1,5 +1,5 @@
 """
-Orignal code is from Code Institute walkthrough project, re-purposed
+Original code is from Code Institute walkthrough project, re-purposed
 for this project
 """
 import streamlit as st
@@ -25,13 +25,15 @@ def detection_body():
     )
 
     st.write(
-        f"* You can download a set of healthy and powdery mildew leaves for live prediction. "
-        f"You can download the images from [here](https://www.kaggle.com/datasets/codeinstitute/cherry-leaves)."
+        f"* You can download a set of healthy and powdery mildew leaves for "
+        f"live prediction. You can download the images from "
+        f"[here](https://www.kaggle.com/datasets/codeinstitute/cherry-leaves)."
     )
 
     st.write("---")
 
-    images_buffer = st.file_uploader('Upload a cherry leaf image. You may select more than one.',
+    images_buffer = st.file_uploader('Upload a cherry leaf image. \
+                                     You may select more than one.',
                                      type='jpeg', accept_multiple_files=True)
 
     if images_buffer is not None:
@@ -42,7 +44,8 @@ def detection_body():
             st.info(f"Cherry Leaf: **{image.name}**")
             img_array = np.array(img_pil)
             st.image(
-                img_pil, caption=f"Image Size: {img_array.shape[1]}px width x {img_array.shape[0]}px height")
+                img_pil, caption=f"Image Size: {img_array.shape[1]}px width x \
+                {img_array.shape[0]}px height")
 
             version = 'v1'
             resized_img = resize_input_image(img=img_pil, version=version)
@@ -50,9 +53,9 @@ def detection_body():
                 resized_img, version=version)
             plot_predictions_probabilities(pred_proba, pred_class)
 
-            df_report = pd.concat([df_report, pd.DataFrame([{"Name": image.name, 
-                                                             'Result': pred_class}])], ignore_index=True)
-
+            df_report = pd.concat([df_report, pd.DataFrame
+                                  ([{"Name": image.name, 'Result': pred_class}]
+                                   )], ignore_index=True)
 
         if not df_report.empty:
             st.success("Analysis Report")
