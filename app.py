@@ -8,7 +8,8 @@ from app_pages.page_mildew_detector import detection_body
 from app_pages.page_hypothesis import hypothesis_body
 from app_pages.page_ml_performance import ml_performance_metrics
 
-app = MultiPage(app_name="Mildew Detection in Cherry Leaves")  # Create an instance of the app
+# Create an instance of the app
+app = MultiPage(app_name="Mildew Detection in Cherry Leaves")
 
 # Add your app pages here using .add_page()
 app.add_page("Quick Project Summary", summary_body)

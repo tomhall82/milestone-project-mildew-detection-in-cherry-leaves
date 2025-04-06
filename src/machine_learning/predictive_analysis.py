@@ -30,10 +30,10 @@ def plot_predictions_probabilities(pred_proba, pred_class):
         y=prob_per_class['Probability'],
         range_y=[0, 1],
         width=600, height=300, template='seaborn')
-    
+
     # Generate a unique key using UUID
     unique_key = str(uuid.uuid4())  # This generates a unique identifier
-    
+
     # Pass the unique key to the plotly chart to ensure no duplicates
     st.plotly_chart(fig, key=unique_key)
 
