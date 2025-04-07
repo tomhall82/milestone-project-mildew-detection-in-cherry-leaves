@@ -130,7 +130,9 @@ The current method of manually inspecting cherry trees for signs of powdery mild
 
 ### Cells Visualiser
 
-This will satisfy business requirement 1
+This will satisfy business requirement 1:
+
+*The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.*
 
 - Checkbox 1 - Difference between average and variability image
 - Checkbox 2 - Differences between average parasitised and average uninfected cells
@@ -142,7 +144,15 @@ This will satisfy business requirement 1
 
 ### Mildew Detection
 
-This will satisfy business requirement 2, the ML system should predict whether a cherry leaf is healthy or infected with powdery mildew.
+This will satisfy business requirement 2:
+
+*The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.*
+
+It also contains:
+
+- Link to the Kaggle dataset
+- Facility to upload images for analyis
+- Link to download the generated report
 
 ![Mildew Detection 1](assets/mildew_detection_1.png)
 ![Mildew Detection 2](assets/mildew_detection_2.png)
@@ -156,6 +166,10 @@ Project hypothesis along with conclusions and validation methods.
 ![Project Hypothesis](assets/project_hypothesis.png)
 
 ### ML Performance Metrics
+
+This page presents the findings from our analysis. It details how the dataset was utilized for testing and outlines the results of the ML model training. Visuals are included to illustrate the model's accuracy and loss on both the training and validation sets. Additionally, the page highlights the model's performance on the test set post-training and discusses its implications for the business requirements.
+
+The images show:
 
 - Label Frequencies for Train, Validation and Test Sets
 - Model History - Accuracy and Losses
