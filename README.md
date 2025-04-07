@@ -130,11 +130,19 @@ The current method of manually inspecting cherry trees for signs of powdery mild
 
 ### Cells Visualiser
 
+This will satisfy business requirement 1
+
+- Checkbox 1 - Difference between average and variability image
+- Checkbox 2 - Differences between average parasitised and average uninfected cells
+- Checkbox 3 - Image Montage
+
 ![Cells Visualiser 1](assets/cells_visualiser_1.png)
 ![Cells Visualiser 2](assets/cells_visualiser_2.png)
 ![Cells Visualiser 3](assets/cells_visualiser_3.png)
 
 ### Mildew Detection
+
+This will satisfy business requirement 2, the ML system should predict whether a cherry leaf is healthy or infected with powdery mildew.
 
 ![Mildew Detection 1](assets/mildew_detection_1.png)
 ![Mildew Detection 2](assets/mildew_detection_2.png)
@@ -143,9 +151,15 @@ The current method of manually inspecting cherry trees for signs of powdery mild
 
 ### Project Hypothesis
 
+Project hypothesis along with conclusions and validation methods.
+
 ![Project Hypothesis](assets/project_hypothesis.png)
 
 ### ML Performance Metrics
+
+- Label Frequencies for Train, Validation and Test Sets
+- Model History - Accuracy and Losses
+- Model evaluation result
 
 ![ML Performance Metrics](assets/ml_performance_metrics.png)
 
@@ -162,7 +176,7 @@ None
 | Navbar | Selecting button for Quick Project Summary | Quick Project Summary page opens | Success |
 | Navbar | Selecting button for Cells Visualiser | Cells Visualiser page opens | Success |
 | Button for difference between average & variability image | Click button | Display average & variability image for healthy & infected leaves | Success |
-| Button for difference between average healthy & infect leaves | Click button | Display both average images & difference image for average healthy & infect leaves | Success |
+| Button for difference between average healthy & infected leaves | Click button | Display both average images & difference image for average healthy & infect leaves | Success |
 | Button for image montage | Click button | Display dropdown for montage creation | Success |
 | Dropdown option for healthy leaves | Select & click button to create montage | See montage of healthy leaves| Success |
 | Dropdown option for infected leaves | Select & click button to create montage | See montage of infected leaves| Success |
@@ -210,7 +224,7 @@ The python code for the app pages and files for data management and predictive a
 
 - [Streamlit](https://streamlit.io/) - Library for building interactive multi-page dashboard
 - [Render](https://render.com/) - Deployment of the dashboard as a web application
-- [Git/GitHub](https://github.com/) - Version control and storing the source code
+- [Git/GitHub](https://github.com/) - Version control
 - [VSCode](https://code.visualstudio.com/) - IDE for local development
 
 ## Credits
