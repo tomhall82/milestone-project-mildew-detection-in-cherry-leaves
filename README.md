@@ -6,9 +6,9 @@ This project applies data science and machine learning to distinguish between he
 
 To keep things organized and efficient, the project is structured around three Jupyter notebooks: one for data import and cleaning, one for data visualization, and another for developing and evaluating a TensorFlow deep learning model. This setup ensures a smooth workflow from data processing to model deployment.
 
-The goal is to help an agri-food business tackle a powdery mildew infestation in its cherry tree plantations. Right now, trees are inspected manually—a slow and labor-intensive process. By automating detection through machine learning, this solution can save time and improve accuracy, making it easier to identify and treat infected trees quickly.
+The goal is to help an agri-food business tackle a powdery mildew infestation in its cherry tree plantations. Right now, trees are inspected manually—a slow and labour-intensive process. By automating detection through machine learning, this solution can save time and improve accuracy, making it easier to identify and treat infected trees quickly.
 
-The project is hosted on the streamlit app and a live version may be found [here](https://milestone-project-mildew-detection-in-0b9a.onrender.com/)
+The project is hosted on the streamlit app and a live version can be found [here](https://milestone-project-mildew-detection-in-0b9a.onrender.com/)
 
 ## Table of Contents
 
@@ -45,7 +45,7 @@ The project is hosted on the streamlit app and a live version may be found [here
 ## Dataset Content
 
 - The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
-- The dataset contains +4 thousand images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
+- The dataset contains over four thousand images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
 
 ## Business Requirements
 
@@ -108,9 +108,9 @@ To do this, we will create an ML model which can predict if a leaf is infected o
 
 We may consider this successful if it is capable of achieving an accuracy rating of at least 97% on the test dataset. lower than 97% will be considered a failure. A high accuracy rating is essential to avoid serious economic implications for the client.
 
-The  ML model should be consistantly reliable while the available montages and comparisons offer visual reference for users.
+The ML model should be consistently reliable while the available montages and comparisons offer visual reference for users.
 
-Successful creation and application will improve the accuracy and speed of detecting powdery mildew, leading to reduced reliance on manual labor, cost savings, enhanced productivity, and increased worker safety by minimizing exposure to potential environmental hazards.
+Successful creation and application will improve the accuracy and speed of detecting powdery mildew, leading to reduced reliance on manual labour, cost savings, enhanced productivity, and increased worker safety by minimizing exposure to potential environmental hazards.
 
 ## Dashboard Design
 
@@ -120,9 +120,9 @@ General Information
 
 Powdery mildew, caused by Podosphaera clandestina, is an obligate biotrophic fungus that affects sweet and sour cherry trees. Mid- and late-season sweet cherry cultivars (Prunus avium) are particularly vulnerable to this disease, rendering the fruit unmarketable due to the white fungal growth that appears on the surface of the cherries.
 
-Initial symptoms of powdery mildew typically appear 7 to 10 days after the first irrigation. These symptoms include light, roughly circular, powdery patches on the young, susceptible leaves, which are newly unfolded and light green in color. Older leaves, however, develop an age-related resistance to powdery mildew, making them less prone to infection.
+Initial symptoms of powdery mildew typically appear 7 to 10 days after the first irrigation. These symptoms include light, roughly circular, powdery patches on the young, susceptible leaves, which are newly unfolded and light green in colour. Older leaves, however, develop an age-related resistance to powdery mildew, making them less prone to infection.
 
-Unlike many other fungi, powdery mildews do not require free water for germination. However, fungal growth and germination are favored by high humidity levels, as noted by Grove & Boal (1991a).
+Unlike many other fungi, powdery mildews do not require free water for germination. However, fungal growth and germination are favoured by high humidity levels, as noted by Grove & Boal (1991a).
 
 The current method of manually inspecting cherry trees for signs of powdery mildew has been deemed time-inefficient. To address this challenge, the client has requested the development of a Machine Learning (ML) model that can predict, based on uploaded photographs, whether a given cherry leaf shows signs of infection.
 
@@ -151,7 +151,7 @@ This will satisfy business requirement 2:
 It also contains:
 
 - Link to the Kaggle dataset
-- Facility to upload images for analyis
+- Facility to upload images for analysis
 - Link to download the generated report
 
 ![Mildew Detection 1](assets/mildew_detection_1.png)
@@ -212,7 +212,7 @@ The python code for the app pages and files for data management and predictive a
 
 1. Log in to Render.com using Github.
 1. Click on the New button, select Web Service.
-1. At Source Code, select Git Providor. Select your repository name. Click Connect.
+1. At Source Code, select Git Provider. Select your repository name. Click Connect.
 1. Enter a unique name for your web service.
 1. Select the Python3 language.
 1. Select the main branch.
@@ -230,7 +230,7 @@ The python code for the app pages and files for data management and predictive a
 - [Matplotlib](https://matplotlib.org/) - Used to plot images such as augmented images and data images
 - [Seaborn](https://seaborn.pydata.org/) - Used to plot image datasets, especially with multiple axes and more features
 - [Plotly](https://plotly.com/python/) - Used for plotting results of ML model training
-- [Joblib](https://joblib.readthedocs.io/) - Used for runnning tasks in parallel
+- [Joblib](https://joblib.readthedocs.io/) - Used for running tasks in parallel
 - [TensorFlow](https://www.tensorflow.org/) - Machine learning library used to build the model
 - [Keras Tuner](https://keras.io/) - Tuning of hyperparameters to find the best combination for model accuracy
 
