@@ -116,13 +116,38 @@ Successful creation and application will improve the accuracy and speed of detec
 
 ### Quick Project Summary
 
+General Information
+
+Powdery mildew, caused by Podosphaera clandestina, is an obligate biotrophic fungus that affects sweet and sour cherry trees. Mid- and late-season sweet cherry cultivars (Prunus avium) are particularly vulnerable to this disease, rendering the fruit unmarketable due to the white fungal growth that appears on the surface of the cherries.
+
+Initial symptoms of powdery mildew typically appear 7 to 10 days after the first irrigation. These symptoms include light, roughly circular, powdery patches on the young, susceptible leaves, which are newly unfolded and light green in color. Older leaves, however, develop an age-related resistance to powdery mildew, making them less prone to infection.
+
+Unlike many other fungi, powdery mildews do not require free water for germination. However, fungal growth and germination are favored by high humidity levels, as noted by Grove & Boal (1991a).
+
+The current method of manually inspecting cherry trees for signs of powdery mildew has been deemed time-inefficient. To address this challenge, the client has requested the development of a Machine Learning (ML) model that can predict, based on uploaded photographs, whether a given cherry leaf shows signs of infection.
+
+![Quick Project Summary](assets/quick_project_summary.png)
+
 ### Cells Visualiser
+
+![Cells Visualiser 1](assets/cells_visualiser_1.png)
+![Cells Visualiser 2](assets/cells_visualiser_2.png)
+![Cells Visualiser 3](assets/cells_visualiser_3.png)
 
 ### Mildew Detection
 
+![Mildew Detection 1](assets/mildew_detection_1.png)
+![Mildew Detection 2](assets/mildew_detection_2.png)
+![Mildew Detection 3](assets/mildew_detection_3.png)
+![Mildew Detection 4](assets/mildew_detection_4.png)
+
 ### Project Hypothesis
 
+![Project Hypothesis](assets/project_hypothesis.png)
+
 ### ML Performance Metrics
+
+![ML Performance Metrics](assets/ml_performance_metrics.png)
 
 ## Unfixed Bugs
 
