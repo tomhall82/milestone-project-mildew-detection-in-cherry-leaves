@@ -10,9 +10,18 @@ The goal is to help an agri-food business tackle a powdery mildew infestation in
 
 The project is hosted on the streamlit app and a live version can be found [here](https://milestone-project-mildew-detection-in-0b9a.onrender.com/)
 
+## Evaluation status
+
+This is an educational portfolio project built from a Code Institute template and walkthrough guidance. It demonstrates image data preparation, a TensorFlow/Keras convolutional neural network, model evaluation and a Streamlit prediction interface.
+
+The original accuracy result needs revalidation. A review of repository filenames found **313 original-image filename families shared between training and test folders**. Because these include rotated or flipped variants, the test set may contain close relatives of training images. This is a leakage risk, rather than evidence that the reported score represents performance on independent images.
+
+The next evaluation should group all variants by original image before splitting, use a reproducible random seed, apply augmentation only to training data, and report a confusion matrix, precision, recall and F1 alongside accuracy. Retraining and this grouped evaluation have not yet been completed.
+
 ## Table of Contents
 
 - [Mildew Detection in Cherry Leaves](#mildew-detection-in-cherry-leaves)
+  - [Evaluation status](#evaluation-status)
   - [Table of Contents](#table-of-contents)
   - [Dataset Content](#dataset-content)
   - [Business Requirements](#business-requirements)
@@ -27,11 +36,11 @@ The project is hosted on the streamlit app and a live version can be found [here
   - [ML Business Case](#ml-business-case)
   - [Dashboard Design](#dashboard-design)
     - [Quick Project Summary](#quick-project-summary)
-    - [Cells Visualiser](#cells-visualiser)
+    - [Leaf Image Visualiser](#leaf-image-visualiser)
     - [Mildew Detection](#mildew-detection)
     - [Project Hypothesis](#project-hypothesis)
     - [ML Performance Metrics](#ml-performance-metrics)
-  - [Unfixed Bugs](#unfixed-bugs)
+  - [Known Limitations](#known-limitations)
   - [Testing](#testing)
     - [Manual Testing](#manual-testing)
     - [Python Validation](#python-validation)
@@ -45,13 +54,13 @@ The project is hosted on the streamlit app and a live version can be found [here
 ## Dataset Content
 
 - The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
-- The dataset contains over four thousand images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
+- The dataset contains over four thousand cherry leaf images. Farmy & Foods is a fictional client used to frame the project; these are public dataset images rather than data collected for a real client. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
 
 ## Business Requirements
 
 The cherry plantation crop from Farmy & Foods is facing a challenge where their cherry plantations have been presenting powdery mildew. Currently, the process is manual verification if a given cherry tree contains powdery mildew. An employee spends around 30 minutes in each tree, taking a few samples of tree leaves and verifying visually if the leaf tree is healthy or has powdery mildew. If there is powdery mildew, the employee applies a specific compound to kill the fungus. The time spent applying this compound is 1 minute. The company has thousands of cherry trees located on multiple farms across the country. As a result, this manual process is not scalable due to the time spent in the manual process inspection.
 
-To save time in this process, the IT team suggested an ML system that detects instantly, using a leaf tree image, if it is healthy or has powdery mildew. A similar manual process is in place for other crops for detecting pests, and if this initiative is successful, there is a realistic chance to replicate this project for all other crops. The dataset is a collection of cherry leaf images provided by Farmy & Foods, taken from their crops.
+To save time in this process, the IT team suggested an ML system that detects instantly, using a leaf tree image, if it is healthy or has powdery mildew. A similar manual process is in place for other crops for detecting pests, and if this initiative is successful, there is a realistic chance to replicate this project for all other crops. The project uses a public Kaggle dataset within a fictional Farmy & Foods business scenario.
 
 - 1 - The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.
 - 2 - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
@@ -75,11 +84,11 @@ Infected cherry leaves can be visually identified due to a distinct powdery whit
 
 ### Hypothesis 2
 
-An ML system trained on cherry leaf images can accurately predict that a cherry leaf is healthy or infected with mildew with at least 90% accuracy.
+An ML system trained on cherry leaf images can accurately predict that a cherry leaf is healthy or infected with mildew with at least 97% accuracy.
 
 ### Validation
 
-This has been verified through the ML Prediction Metrics which show 99% accuracy.
+The original evaluation recorded approximately 99% accuracy on a file-level test split. A subsequent review identified original-image filename families shared across training and test folders, including rotated and flipped variants. This creates a data leakage risk, so the reported score should not be treated as an independent estimate of performance on unseen leaves. The 97% project target remains to be reassessed using a split grouped by original image.
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
@@ -128,19 +137,19 @@ The current method of manually inspecting cherry trees for signs of powdery mild
 
 ![Quick Project Summary](assets/quick_project_summary.png)
 
-### Cells Visualiser
+### Leaf Image Visualiser
 
 This will satisfy business requirement 1:
 
 *The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.*
 
 - Checkbox 1 - Difference between average and variability image
-- Checkbox 2 - Differences between average parasitised and average uninfected cells
+- Checkbox 2 - Differences between average infected and healthy leaves
 - Checkbox 3 - Image Montage
 
-![Cells Visualiser 1](assets/cells_visualiser_1.png)
-![Cells Visualiser 2](assets/cells_visualiser_2.png)
-![Cells Visualiser 3](assets/cells_visualiser_3.png)
+![Leaf Image Visualiser 1](assets/cells_visualiser_1.png)
+![Leaf Image Visualiser 2](assets/cells_visualiser_2.png)
+![Leaf Image Visualiser 3](assets/cells_visualiser_3.png)
 
 ### Mildew Detection
 
@@ -177,9 +186,12 @@ The images show:
 
 ![ML Performance Metrics](assets/ml_performance_metrics.png)
 
-## Unfixed Bugs
+## Known Limitations
 
-None
+- Related original-image filename families occur across training and test splits. Rotated or flipped versions of one source image must be kept in the same split before retraining and independent evaluation.
+- The saved training output contains an input-exhaustion warning; the training loop needs review before the next run.
+- Dataset accuracy does not establish reliability on photographs from new farms, cameras or lighting conditions.
+- Cost savings and operational benefits are proposed outcomes of the fictional business case, not measured production results.
 
 ## Testing
 
@@ -188,7 +200,7 @@ None
 | Dashboard item | Test conducted | Expected result | Actual result |
 | -- | -- | -- | -- |
 | Navbar | Selecting button for Quick Project Summary | Quick Project Summary page opens | Success |
-| Navbar | Selecting button for Cells Visualiser | Cells Visualiser page opens | Success |
+| Navbar | Selecting button for Leaf Image Visualiser | Leaf Image Visualiser page opens | Success |
 | Button for difference between average & variability image | Click button | Display average & variability image for healthy & infected leaves | Success |
 | Button for difference between average healthy & infected leaves | Click button | Display both average images & difference image for average healthy & infect leaves | Success |
 | Button for image montage | Click button | Display dropdown for montage creation | Success |
